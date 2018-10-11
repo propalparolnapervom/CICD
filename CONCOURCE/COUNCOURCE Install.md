@@ -35,11 +35,36 @@ cd ~/init_install/concourse_via_dock
 wget https://raw.githubusercontent.com/starkandwayne/concourse-tutorial/master/docker-compose.yml
 ```
 
-### START CONCOURSE
+### START/STOP CONCOURSE
 
-Run it
+
+
+**Up**
+
+(create new containers and start them)
 ```
 docker-compose up -d
+```
+
+**Down** 
+
+(stop containers and destroy them)
+```
+docker-compose down
+```
+
+**Start** 
+
+(start already existing containers)
+```
+docker-compose start
+```
+
+**Stop**
+
+(just stop containers, without their destroing)
+```
+docker-compose start
 ```
 
 
