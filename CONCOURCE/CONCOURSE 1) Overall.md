@@ -2,7 +2,7 @@
 
 [Docs: Overall](https://concourse-ci.org/index.html)
 
-[Tutorial](https://concoursetutorial.com/)
+[Tutorial: Basics](https://concoursetutorial.com/)
 
 [Tutorial: Miscellaneous](https://concoursetutorial.com/miscellaneous/)
 
