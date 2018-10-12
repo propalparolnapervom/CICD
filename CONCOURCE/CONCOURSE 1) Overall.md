@@ -62,6 +62,24 @@ The `inputs` feature of a task allows us to pass in two types of inputs:
 
 
 
+## RESOURCES
+
+[Tutorial](https://concoursetutorial.com/basics/pipeline-resources/)
+
+[Docs: Resources](https://concourse-ci.org/resources.html)
+
+[Docs: Resource Types](https://concourse-ci.org/resource-types.html)
+
+With **pipelines** we need to store the **task file** and **task script** somewhere outside of Concourse.
+
+Concourse offers no services for storing/retrieving your data. No git repositories. No blobstores. No build numbers. 
+
+Every input and output must be provided externally. Concourse calls them **Resources**. 
+
+Example resources are:
+  - git
+  - s3
+  - semver
 
 
 
