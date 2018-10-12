@@ -55,14 +55,30 @@ See saved targets
 cat ~/.flyrc
 ```
 
-# TASK (COMMAND LINE)
+# TASK
 
 Run `example.yml` task file on `tutorial` target.
 ```
 fly -t tutorial e -c example1.yml
 ```
 
+# INPUTS
 
+`input` defines content of **working folder** inside the container.
+
+_______________
+
+Use current dir as `input`
+```
+fly -t tutorial e -c inputs_required.yml -i some-important-input=.
+```
+
+To pass in a different dir as an `input`
+```
+fly -t tutorial e -c inputs_required.yml -i some-important-input=../task-hello-world
+```
+
+The `fly execute -i` option can be removed if the current dir is the same name as the required input.
 
 
 
