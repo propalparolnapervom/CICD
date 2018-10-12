@@ -38,7 +38,22 @@ docker-compose start
 ```
 
 
+## TARGET
 
+Set `tutorial` alias for the target.
+```
+fly --target tutorial login --concourse-url http://127.0.0.1:8080 -u admin -p admin
+```
+
+Sync `tutorial` target.
+```
+fly --target tutorial sync
+```
+
+See saved targets
+```
+cat ~/.flyrc
+```
 
 
 
