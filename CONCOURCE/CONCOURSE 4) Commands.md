@@ -1,4 +1,4 @@
-# CONCOURCE COMMANDS
+# CONCOURSE COMMANDS
 
 [Tutorial](https://concoursetutorial.com/)
 
