@@ -3,7 +3,7 @@
 [Tutorial](https://concoursetutorial.com/)
 
 
-## START/STOP
+# START/STOP
 
 > For the case when Concourse is deployed via Docker Compose
 
@@ -38,7 +38,7 @@ docker-compose start
 ```
 
 
-## TARGET
+# TARGET
 
 Set `tutorial` alias for the target.
 ```
@@ -55,7 +55,12 @@ See saved targets
 cat ~/.flyrc
 ```
 
+# TASK (COMMAND LINE)
 
+Run `example.yml` task file on `tutorial` target.
+```
+fly -t tutorial e -c example1.yml
+```
 
 
 
