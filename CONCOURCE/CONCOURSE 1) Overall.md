@@ -54,6 +54,38 @@ fly -t tutorial e -c inputs_required.yml -i some-important-input=../task-hello-w
 
 The `fly execute -i` option can be removed if the current directory is the same name as the required input.
 
+___________
+
+The `inputs` feature of a task allows us to pass in two types of inputs:
+  - **requirements/dependencies** to be processed/tested/compiled
+  - **task scripts** to be executed to perform complex behavior
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
