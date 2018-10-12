@@ -82,6 +82,12 @@ The `fly execute -i` option can be removed if the current dir is the same name a
 
 
 
+# PIPELINE
+
+Set pipeline
+```
+fly -t tutorial set-pipeline -c pipeline.yml -p hello-world
+```
 
 
 
