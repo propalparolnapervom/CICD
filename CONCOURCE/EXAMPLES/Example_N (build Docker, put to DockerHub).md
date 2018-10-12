@@ -1,4 +1,4 @@
-# EXAMPLE_2 Build Docker, put it to DockerHub
+# EXAMPLE_N Build Docker, put it to DockerHub
 
 Run task from command line:
   - on `linux` platform
