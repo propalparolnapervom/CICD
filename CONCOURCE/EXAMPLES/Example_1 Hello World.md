@@ -1,4 +1,4 @@
-# EXAMPLE_1 
+# EXAMPLE_1 Hello World
 
 Run task from command line:
   - on `linux` platform
