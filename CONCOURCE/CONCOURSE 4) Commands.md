@@ -84,7 +84,7 @@ The `fly execute -i` option can be removed if the current dir is the same name a
 
 # PIPELINE
 
-**Set**
+## SET
 
 Set pipeline `pl_xbs` from `pl_xbs.yml` pipeline file.
 ```
@@ -93,8 +93,7 @@ fly -t tutorial set-pipeline -c pl_xbs.yml -p pl_xbs
 fly -t tutorial sp -c pl_xbs.yml -p pl_xbs
 ```
 
-
-**Unpause**
+## PAUSE/UNPAUSE
 
 Unpause whole `pipeline_xbs` pipeline.
 ```
@@ -110,7 +109,7 @@ fly -t tutorial unpause-job --job pipeline_xbs/job_xbs
 fly -t tutorial uj --job pipeline_xbs/job_xbs
 ```
 
-**Pause**
+___________
 
 Pause whole `pipeline_xbs` pipeline.
 ```
@@ -128,6 +127,14 @@ fly -t tutorial pj --job pipeline_xbs/job_xbs
 
 
 
+## DESTROY
+
+Destroy `pl_xbs` pipeline.
+```
+fly -t tutorial destroy-pipeline -p pl_xbs 
+
+fly -t tutorial dp -p pl_xbs
+```
 
 
 
