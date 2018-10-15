@@ -1,4 +1,4 @@
-# EXAMPLE_4 PIPELINE RESOURCES
+# EXAMPLE_4 PIPELINE RESOURCES (basic)
 
 Create pipeline:
   - on `linux` platform
