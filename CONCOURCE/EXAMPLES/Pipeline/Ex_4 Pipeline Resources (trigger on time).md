@@ -31,7 +31,7 @@ image_resource:
 
 run:
   path: echo
-  args: [This was pulled out from the Git]
+  args: [This was pulled out in time interval]
 ```
 
 
@@ -50,11 +50,17 @@ resources:
     uri: https://github.com/propalparolnapervom/test_dir.git
     branch: master
     
+- name: xbs_timer
+  type: time
+  source:
+    interval: 2m
+    
 jobs:
 - name: xbs_local_job
   public: true
   plan:
   - get: xbs_local_resource
+  - get: xbs_timer
     trigger: true
   - task: xbs_local_task
     file: xbs_local_resource/conc-pipeline/xbs_resource_task_file.yml 
