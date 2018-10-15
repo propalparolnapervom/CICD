@@ -4,7 +4,7 @@ Create pipeline:
   - on `linux` platform
   - using the `busybox` Docker container image
   - Task File is in Resources (`git`)
-  - Task Script with command `echo`
+  - manual triggering
   
 [Tutorial](https://concoursetutorial.com/basics/pipeline-resources/)
 
