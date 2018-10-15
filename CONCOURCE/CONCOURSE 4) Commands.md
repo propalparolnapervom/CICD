@@ -137,7 +137,20 @@ fly -t tutorial dp -p pl_xbs
 ```
 
 
-## JOB OUTPUT
+# JOB
+
+## LIST RUNS
+
+
+Sho jobs runs
+```
+fly -t tutorial builds
+
+fly -t tutorial builds -j xbs_local_pipeline/xbs_local_job
+```
+
+
+## OUTPUT
 
 Show the output of LATEST run of `xbs_local_job` job from `xbs_local_pipeline` pipeline.
 ```
@@ -150,8 +163,17 @@ fly -t tutorial watch --build 5 -j xbs_local_pipeline/xbs_local_job
 ```
 
 
+## TRIGGER
 
+Trigger job from command line
+```
+fly -t tutorial trigger-job -j xbs_local_pipeline/xbs_local_job
+```
 
+Trigger job and watch it simualteneously
+```
+fly -t tutorial trigger-job -j xbs_local_pipeline/xbs_local_job -w
+```
 
 
 
