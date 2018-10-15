@@ -6,7 +6,7 @@ Create pipeline:
   - Task File is in Resources (`git`)
   - Task runs each time Resource (`git`) is updated
   
-[Tutorial](https://concoursetutorial.com/basics/pipeline-resources/)
+[Tutorial](https://concoursetutorial.com/basics/triggers/)
 
 
 # RUN
