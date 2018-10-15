@@ -19,18 +19,8 @@ Create pipeline:
 
 This is a resource, which will be pointed.
 
-Task Script `xbs_resource_task_script.sh`:
-```
-#!/bin/sh
-echo
-echo
-echo "This is running from Task Script from git!"
-echo 
-echo
-```
 
-
-Task File `xbs_resource_task_file.yml` for Task Script above:
+Task File `xbs_resource_task_file.yml` from resource.
 ```
 ---
 platform: linux
@@ -39,11 +29,9 @@ image_resource:
   type: docker-image
   source: {repository: busybox}
 
-inputs:
-- name: conc-pipeline
-
 run:
-  path: ./conc-pipeline/xbs_resource_task_script.sh
+  path: echo
+  args: [This was pulled out from the Git]
 ```
 
 
@@ -77,15 +65,13 @@ jobs:
 
 Create `xbs_local_pipeline` pipeline on `xbs_local_task_file.yml`:
 ```
-fly sp -t tutorial -c xbs_local_task_file.yml -p xbs_local_pipeline -i conc-pipeline=.
+fly sp -t tutorial -c xbs_local_task_file.yml -p xbs_local_pipeline
 ```
 
 Unpause whole `xbs_local_pipeline` pipeline.
 ```
 fly -t tutorial up -p xbs_local_pipeline
 ```
-
-
 
 
 
