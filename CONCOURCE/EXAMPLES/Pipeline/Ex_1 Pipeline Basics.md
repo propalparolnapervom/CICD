@@ -29,16 +29,9 @@ jobs:
         args: [hello world]
 ```
 
-Set pipeline on that pipefile:
+Set pipeline on that Task File:
 ```
 fly -t tutorial set-pipeline -c pipeline.yml -p pipeline_xbs
-
-      pipeline created!
-      you can view your pipeline here: http://127.0.0.1:8080/teams/main/pipelines/pipeline_xbs
-
-      the pipeline is currently paused. to unpause, either:
-        - run the unpause-pipeline command
-        - click play next to the pipeline in the web ui
 ```
 
 
