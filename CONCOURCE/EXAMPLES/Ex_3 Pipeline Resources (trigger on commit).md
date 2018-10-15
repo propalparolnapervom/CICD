@@ -1,10 +1,10 @@
-# EXAMPLE_4 PIPELINE RESOURCES (+script)
+# EXAMPLE_3 PIPELINE RESOURCES (trigger on commit)
 
 Create pipeline:
   - on `linux` platform
   - using the `busybox` Docker container image
   - Task File is in Resources (`git`)
-  - Task Script with command `echo`
+  - Task runs each time Resource (`git`) is updated
   
 [Tutorial](https://concoursetutorial.com/basics/pipeline-resources/)
 
@@ -55,6 +55,7 @@ jobs:
   public: true
   plan:
   - get: xbs_local_resource
+    trigger: true
   - task: xbs_local_task
     file: xbs_local_resource/conc-pipeline/xbs_resource_task_file.yml 
 ```
