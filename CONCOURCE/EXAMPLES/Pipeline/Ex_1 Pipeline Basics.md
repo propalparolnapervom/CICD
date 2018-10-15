@@ -1,4 +1,4 @@
-# EXAMPLE_3 PIPELINE BASICS
+# EXAMPLE_1 PIPELINE BASICS
 
 Create pipeline:
   - on `linux` platform
