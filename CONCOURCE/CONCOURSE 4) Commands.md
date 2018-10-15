@@ -137,6 +137,12 @@ fly -t tutorial dp -p pl_xbs
 ```
 
 
+## SHOW OUTPUT OF LAST JOB
+
+Show the output of recent running of `xbs_local_job` job running from `xbs_local_pipeline` pipeline.
+```
+fly -t tutorial watch -j xbs_local_pipeline/xbs_local_job
+```
 
 
 
