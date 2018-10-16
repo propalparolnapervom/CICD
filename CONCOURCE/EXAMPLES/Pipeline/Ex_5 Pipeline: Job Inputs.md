@@ -1,4 +1,4 @@
-# EXAMPLE 5 PIPELINE RESOURCES (job input)
+# EXAMPLE 5 PIPELINE: Job Input
 
 
 Create pipeline:
@@ -6,7 +6,7 @@ Create pipeline:
   - using the `busybox` Docker container image
   - Task File is in Resources (`git`)
   - Task Script is in Resources (`git`)
-  - Run Task Script from Resources
+  - Run Task Script from Resources (Some task that only consumes an input resource and runs a script that runs some steps. Does not create anything new. See next example for that)
   
 [Tutorial](https://concoursetutorial.com/basics/job-inputs/)
 
