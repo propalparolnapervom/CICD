@@ -28,6 +28,11 @@ Task Script `xbs_resource_task_script.sh` from resource.
 echo
 echo "This is TASK SCRIPT from RESOURCE!"
 echo
+
+echo
+echo "ls -la ; pwd ; ls -la *"
+ls -la ; pwd ; ls -la *
+echo
 ```
 
 
@@ -86,6 +91,27 @@ Unpause whole `xbs_local_pipeline` pipeline.
 fly -t tutorial up -p xbs_local_pipeline
 ```
 
+
+## OUTPUT
+
+```
+
+This is TASK SCRIPT from RESOURCE!
+
+
+ls -la ; pwd ; ls -la *
+total 12
+drwxr-xr-x    3 root     root          4096 Oct 16 09:20 .
+drwxr-xr-x    3 root     root          4096 Oct 16 09:20 ..
+drwxr-xr-x    1 root     root          4096 Oct 16 09:20 xbs_local_resource
+/tmp/build/be463f39
+total 20
+drwxr-xr-x    1 root     root          4096 Oct 16 09:20 .
+drwxr-xr-x    3 root     root          4096 Oct 16 09:20 ..
+drwxr-xr-x    9 root     root          4096 Oct 16 09:20 .git
+drwxr-xr-x    2 root     root          4096 Oct 16 09:20 conc-pipeline
+-rw-r--r--    1 root     root            17 Oct 16 09:20 readme.txt
+```
 
 
 
