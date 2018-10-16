@@ -231,5 +231,6 @@ drwxr-xr-x    1 root     root          4096 Oct 16 10:41 xbs_git_resource
 Tue Oct 16 10:41:04 UTC 2018
 ```
 
+> NOTE: `output_dir` output dir exists from very begining. That's because if a task includes outputs then those output dirs are pre-created and do not need creating.
 
 
