@@ -30,6 +30,29 @@ run:
   args: [hello world]
 ```
 
+OR (another way to define arguments)
+
+```
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: busybox}
+
+      run:
+        path: sh
+        args: 
+          - "-ec"
+          - |
+            ls -la
+            pwd
+            uname -a
+            echo
+            echo "git version is"
+            git --version
+```
+
 Run task
 ```
 fly -t tutorial e -c example1.yml
