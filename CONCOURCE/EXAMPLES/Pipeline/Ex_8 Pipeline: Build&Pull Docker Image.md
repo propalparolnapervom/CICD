@@ -22,7 +22,7 @@ jobs:
     - get: xbs_source_resource                              #Download resource described further in the file
     - put: xbs_destination_resource                         #Push built image to this remote resource, described further in the file
       params:
-        build: xbs_source_resource                          #Name of the previously downloaded resource
+        build: xbs_source_resource                          #The path of a dir containing a Dockerfile to build
         tag_file: xbs_source_resource/tag_f_in_repo.txt     #Full path to the file in the downloaded resource with some tag (if any)
         tag_as_latest: true                                 #In addition, tag the pushed image as "latest" 
         
