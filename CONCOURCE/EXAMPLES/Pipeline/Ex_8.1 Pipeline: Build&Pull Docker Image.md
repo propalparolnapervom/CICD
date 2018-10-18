@@ -1,4 +1,4 @@
-# EXAMPLE 7 PIPELINE: Build&Pull Docker Image
+# EXAMPLE 8.1 PIPELINE: Build&Pull Docker Image
 
 
 
