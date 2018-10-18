@@ -16,13 +16,17 @@ Create a Task File `pipeline.yml`
 ```
 ---
 jobs:
-- name: xbs_local_job
+- name: xbs_local_job                                       #Any random name
   public: true
   plan:
-    - get: xbs_source_resource
-    - put: xbs_destination_resource
+    - get: xbs_source_resource                              #Download resource described further in the file
+    - put: xbs_destination_resource                         #Push built image to this remote resource, described further in the file
       params:
-        build: xbs_source_resource
+        build: xbs_source_resource                          #Name of the previously downloaded resource
+        tag_file: xbs_source_resource/tag_f_in_repo.txt     #Full path to the file in the downloaded resource with some tag (if any)
+        tag_as_latest: true                                 #In addition, tag the pushed image as "latest" 
+        
+        
             
 resources:
 - name: xbs_source_resource
