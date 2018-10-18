@@ -22,6 +22,7 @@ Push a Docker image to the source's repository and tag. The resulting version is
 **Parameters**
 
   - `build`: Optional. The path of a directory containing a `Dockerfile` to build.
+  - `tag`: DEPRECATED - Use `tag_file` instead
   - `tag_file`: Optional. The value should be a path to a file containing the name of the tag.
   - `tag_as_latest`: Optional. Default `false`. If `true`, the pushed image will be tagged as latest in addition to whatever other tag was specified.
 
