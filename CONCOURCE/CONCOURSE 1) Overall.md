@@ -86,6 +86,21 @@ Example resources are:
   - semver
 
 
+## STEPS
+
+### PUT
+
+**Why does Concourse `get` a resource after `put`ing it?**
+
+Every `put` implies a `get` of the version that was created. There are a few reasons for this:
+
+The primary reason for this is so that the newly created resource can be used by later steps in the build plan. Without the `get` there is no way to introduce "new" resources during a build's execution, as they're all resolved to a particular version to fetch when the build starts.
+
+There are some side-benefits to doing this as well. For one, it immediately warms the cache on one worker. So it's at least not totally worthless; later jobs won't have to fetch it. It also acts as validation that the put actually had the desired effect.
+
+In this particular case, as it's the last step in the build plan, the primary reason doesn't really apply. But we didn't bother optimizing it away since in most cases the side benefits make it worth not having the secondary question arise ("why do only SOME put steps imply a get?").
+
+It also cannot be disabled as we resist adding so many knobs that you'll want to turn one day and then have to go back and turn back off once you actually do need it back to the default.
 
 
 
