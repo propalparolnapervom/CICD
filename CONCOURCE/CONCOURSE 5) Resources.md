@@ -25,6 +25,7 @@ Push a Docker image to the source's repository and tag. The resulting version is
   - `tag`: DEPRECATED - Use `tag_file` instead
   - `tag_file`: Optional. The value should be a path to a file containing the name of the tag.
   - `tag_as_latest`: Optional. Default `false`. If `true`, the pushed image will be tagged as latest in addition to whatever other tag was specified.
+  - `load_base`: Optional. A path to a directory containing an image to `docker load` before running `docker build`. The directory must have `image`, `image-id`, `repository`, and `tag` present, i.e. the tree produced by /in.
 
 
 
