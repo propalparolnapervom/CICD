@@ -125,7 +125,12 @@ fly -t tutorial pause-job --job pipeline_xbs/job_xbs
 fly -t tutorial pj --job pipeline_xbs/job_xbs
 ```
 
+## VIEW
 
+Get a pipeline's current configuration
+```
+fly -t 90poe_all gp -p to_del
+```
 
 ## DESTROY
 
