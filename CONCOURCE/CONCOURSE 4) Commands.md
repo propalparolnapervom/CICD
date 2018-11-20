@@ -181,7 +181,12 @@ fly -t tutorial trigger-job -j xbs_local_pipeline/xbs_local_job -w
 ```
 
 
+# CACHE
 
+Clear task cache
+```
+fly -t <TARGET_NAME> clear-task-cache -j <PIPELINE_NAME>/<JOB_NAME> -s <TASK_NAME>
+```
 
 
 
