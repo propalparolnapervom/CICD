@@ -188,7 +188,17 @@ Clear task cache
 fly -t <TARGET_NAME> clear-task-cache -j <PIPELINE_NAME>/<JOB_NAME> -s <TASK_NAME>
 ```
 
+# WORKERS
 
+See current workers and their state
+```
+fly -t tutorial workers
+
+      name             containers  platform  tags  team  state    version
+      ip-172-26-2-145  39          linux     none  none  running  2.1    
+      ip-172-26-2-133  46          linux     none  none  running  2.1
+
+```
 
 
 
