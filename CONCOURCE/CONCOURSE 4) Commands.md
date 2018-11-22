@@ -84,6 +84,14 @@ The `fly execute -i` option can be removed if the current dir is the same name a
 
 # PIPELINE
 
+## LIST
+
+Lit all pipelines
+```
+fly -t tutorial pipelines
+```
+
+
 ## SET
 
 Set pipeline `pl_xbs` from `pl_xbs.yml` pipeline file.
