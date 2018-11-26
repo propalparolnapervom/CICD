@@ -13,7 +13,6 @@ Create pipeline:
 
 Pipeline file `pipeline.yml`:
 ```
----
 jobs:
 - name: job-hello-world
   public: true
@@ -25,8 +24,13 @@ jobs:
         type: docker-image
         source: {repository: busybox}
       run:
-        path: echo
-        args: [hello world]
+        path: sh
+        args: 
+          - "-ec"
+          - |
+            echo 
+            echo "Where am I?"
+            ls -la ; pwd
 ```
 
 Set pipeline on that Task File:
