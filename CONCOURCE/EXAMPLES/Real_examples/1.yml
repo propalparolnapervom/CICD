@@ -1,0 +1,36 @@
+jobs:
+- name: job_to_del
+  public: true
+  plan:
+  - get: nginx
+  - task: task_to_del
+    image: nginx
+    config:
+      platform: linux
+      params:
+        TEST_ENV: "good"
+      run:
+        path: sh
+        args:
+          - "-ec"
+          - |
+            echo
+            echo
+            echo "Where am I?"
+            ls -la ; pwd
+
+            echo 
+            echo "I can see env vars:"
+            echo TEST_ENV=$TEST_ENV
+
+
+
+resources:
+
+- name: nginx
+  type: docker-image
+  check_every: 60m
+  source:
+    repository: nginx
+    tag: "1.15-alpine"
+
