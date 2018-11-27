@@ -66,6 +66,13 @@ Run `example.yml` task file on `tutorial` target.
 fly -t tutorial e -c example1.yml
 ```
 
+Validate task file
+```
+fly vp -c heavy1.yml
+
+      looks good
+```
+
 # INPUTS
 
 `input` defines content of **working folder** inside the container.
