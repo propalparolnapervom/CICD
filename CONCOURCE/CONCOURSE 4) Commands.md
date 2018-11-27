@@ -55,7 +55,6 @@ See saved targets
 fly ts
 
       name       url                                          team  expiry                       
-      90poe_all  https://concourse.tools.devopenocean.studio  all   Tue, 27 Nov 2018 15:02:36 UTC
       tst        http://127.0.0.1:8080                        main  Tue, 27 Nov 2018 13:12:39 UTC
       tutorial   http://127.0.0.1:8080                        main  Fri, 19 Oct 2018 15:00:48 UTC
 ```
