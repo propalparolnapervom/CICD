@@ -140,6 +140,13 @@ Get a pipeline's current configuration
 fly -t 90poe_all gp -p to_del
 ```
 
+## ABORT RUN
+
+Abort running of `5` build of `ship1` job in `to_del_1` pipeline
+```
+fly -t 90poe_all abort-build -j to_del_1/ship1 --build 5
+```
+
 ## DESTROY
 
 Destroy `pl_xbs` pipeline.
