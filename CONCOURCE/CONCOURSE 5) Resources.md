@@ -29,8 +29,9 @@ Push a Docker image to the source's repository and tag. The resulting version is
 
 
 
+## git-resource
 
-
+[git-resource](https://github.com/concourse/git-resource)
 
 
 
