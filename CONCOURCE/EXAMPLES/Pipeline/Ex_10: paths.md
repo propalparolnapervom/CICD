@@ -1,6 +1,6 @@
 # WHAT
 
-Make pipeline that triggers on specific dir in repo only (instead of whole repo)
+Make pipeline that triggers on specific dir in repo only (instead of whole repo) and ckeouts whole repo.
 
 ## CODE
 
@@ -50,13 +50,16 @@ jobs:
             cd ./xbs_local_resource ; ls -la ; pwd
 
 
+
 resources:
 - name: xbs_local_resource
   type: git
   source:
     uri: https://github.com/propalparolnapervom/test_dir.git
     branch: master
-    submodules: conc-pipeline/output_dir
+    paths: 
+          - './conc-pipeline/output_dir'
+
 ```
 
 ## RESULTS
@@ -76,5 +79,4 @@ Pipeline is triggering.
 Whole repo will be checkouted as `xbs_local_resource` resource (not submodule)
 
 
-# OPTION 2
 
