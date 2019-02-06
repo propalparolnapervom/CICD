@@ -1,0 +1,44 @@
+
+jobs:
+- name: test_job
+  plan:
+    - task: test-sometimes-works_task
+      config:
+        platform: linux
+        image_resource:
+          type: docker-image
+          source: 
+            repository: busybox
+        run:
+          path: sh
+          args:
+            - "-ec"
+            - |
+              echo
+              echo This is not success task
+              lsd
+      on_success:
+        put: notify
+        params:
+          text: "Job success: just a text line"
+      on_failure:
+        put: notify
+        params:
+          text: |
+                Job failure: just a text line (different way to put the text).
+
+
+resources:
+
+- name: notify
+  type: slack-notification
+  source:
+    url: "<insert_it>"
+
+
+resource_types:
+
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource

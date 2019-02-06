@@ -1,0 +1,57 @@
+
+jobs:
+- name: test_job
+  plan:
+    - task: test-sometimes-works_task
+      config:
+        platform: linux
+        image_resource:
+          type: docker-image
+          source: 
+            repository: busybox
+        outputs:
+          - name: output_dir
+        run:
+          path: sh
+          args:
+            - "-ec"
+            - |
+              echo
+              echo Prepare files to send
+              ls -la
+              echo "Job success: text from file" > output_dir/success.txt
+              echo "Job failure: text from file" > output_dir/failure.txt
+
+              echo
+              echo This time it is not success
+              
+              echo
+              echo cat output_dir/failure.txt
+              cat output_dir/failure.txt
+
+              lsd
+
+      on_success:
+        put: notify
+        params:
+          text_file: output_dir/success.txt
+      on_failure:
+        put: notify
+        params:
+          text_file: output_dir/failure.txt
+
+
+resources:
+
+- name: notify
+  type: slack-notification
+  source:
+    url: "<insert_it>"
+
+
+resource_types:
+
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: cfcommunity/slack-notification-resource

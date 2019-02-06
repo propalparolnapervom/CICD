@@ -1,5 +1,7 @@
 # EXAMPLE_4 PIPELINE RESOURCES (trigger on time)
 
+[Time Docs](https://github.com/concourse/time-resource)
+
 Create pipeline:
   - on `linux` platform
   - using the `busybox` Docker container image
