@@ -59,6 +59,14 @@ fly ts
       tutorial   http://127.0.0.1:8080                        main  Fri, 19 Oct 2018 15:00:48 UTC
 ```
 
+# TEAM
+
+List all teams from `90poe_all` target
+```
+fly -t 90poe_all teams -d
+```
+
+
 # TASK
 
 Run `example.yml` task file on `tutorial` target.
