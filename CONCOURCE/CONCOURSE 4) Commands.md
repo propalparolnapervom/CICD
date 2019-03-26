@@ -43,6 +43,10 @@ docker-compose start
 Set `tutorial` alias for the target.
 ```
 fly --target tutorial login --concourse-url http://127.0.0.1:8080 -u admin -p admin
+
+      #OR
+      
+fly login -t 90poe_all -n devops -c https://concourse.link/
 ```
 
 Sync `tutorial` target.
