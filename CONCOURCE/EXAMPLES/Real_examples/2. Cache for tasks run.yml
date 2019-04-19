@@ -1,0 +1,59 @@
+---
+jobs:
+
+  - name: job_with_cache
+    plan:
+      - get: mfenode
+        tags: [node]
+        params:
+          save: true
+      - task: single_task_multiply_runs
+        tags: [node]
+        image: mfenode
+        config:
+          platform: linux
+          caches:
+            - path: cached_dependies
+          run:
+            path: sh
+            args:
+              - "-ec"
+              - |
+
+                BASE=`pwd`
+
+                echo
+                echo "  Actual cached dir:"
+                cd ${BASE}/cached_dependies ; ls -la ; pwd
+                echo
+            
+                if [ -z "$(ls -A ${BASE}/cached_dependies)" ]
+                then
+                  echo
+                  echo "  From script: the cache dir IS empty"
+                  echo 
+                  date > ${BASE}/cached_dependies/date.txt
+                  echo
+                  echo "    Was added:"
+                  cat ${BASE}/cached_dependies/date.txt
+                  echo
+                else
+                  echo
+                  echo "  From script: the cache dir IS NOT empty"
+                  echo 
+                  echo "    Here is what inside:"
+                  cat ${BASE}/cached_dependies/date.txt
+                  echo
+                fi
+
+
+resources:
+
+  - name: mfenode
+    type: docker-image
+    tags: [node]
+    source:
+      password: adf
+      repository: asdf
+      username: adf
+    check_every: 24h
