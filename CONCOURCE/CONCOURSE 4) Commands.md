@@ -240,8 +240,16 @@ fly -t tutorial workers
 
 # CONTAINERS
 
+List containers
 ```
 fly -t 90poe_all containers
+```
+
+Go into specific container
+```
+      #fly -t <TARGET_NAME> intercept -j <PIPELINE_NAME>/<JOB_NAME>
+
+fly -t 90poe_testing intercept -j open-ocean-studio-test-tests/run_tests
 ```
 
 
