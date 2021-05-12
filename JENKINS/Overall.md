@@ -1,8 +1,10 @@
 # OVERALL INFO FOR JENKINS
 
-# DOCS
+# PIPELINES
 
-[Jenkins syntax](https://www.jenkins.io/doc/book/pipeline/syntax/)
+## Docs
+
+[Pipeline: Syntax](https://www.jenkins.io/doc/book/pipeline/syntax/)
 
 [Pipeline: Basic Steps](https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/)
 
