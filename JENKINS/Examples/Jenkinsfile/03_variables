@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    environment {
+        // VARIABLES: custom
+        def thisIsStringVar = "Wow, it works!"
+        def thisIsNumberVar = 3
+        def thisIsBoolVar = true
+
+        // VARIABLES: Jenkins-specific
+        // https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#using-environment-variables
+    }
+
+    stages {
+        stage("Demo step with variables: custom"){
+            steps {
+                // VARIABLES: custom
+                echo "string: ${thisIsStringVar}"
+                echo "number: ${thisIsNumberVar}"
+                echo "bool: ${thisIsBoolVar}"
+            }
+        }
+
+        stage("Demo step with variables: Jenkins-specific"){
+            steps {
+                // VARIABLES: Jenkins-specific
+                echo "A build number is: ${env.BUILD_NUMBER}"
+                echo "Pls, find this build run at ${env.BUILD_URL}"
+            }
+        }
+
+    }
+}
