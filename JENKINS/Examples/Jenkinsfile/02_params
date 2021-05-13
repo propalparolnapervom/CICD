@@ -1,18 +1,59 @@
-// PARAMS: BOOLEAN
-
 pipeline {
     agent any
 
     parameters {
-        booleanParam(defaultValue: false, description: "Check the radiobutton, if you want to make it TRUE", name: "SERVICE_ENABLED")
+        // Parameter: boolean
+        booleanParam(name: "SERVICE_ENABLED", 
+                     defaultValue: false, 
+                     description: "Check the radiobutton, if you want to make it TRUE")
+
+        // Parameter: string
+        string(name: "SINGLE_STRING_VAR", 
+               defaultValue: "TEST", 
+               description: "Single string (for example, which env to deploy in?)")
+
+        // Parameter: text
+        text(name: "MULTI_STRING_VAR",
+            defaultValue: "TEST \n ENV \n TO DEPLOY \n", 
+            description: "Multiply string (for example, description)")
+
+        // Parameter: choice (drop-down list)
+        //    Default value: if nothing was specified during run, the 1st item from the area is chosen
+        choice(name: "VAR_FROM_DROP_DOWN_LIST",
+            choices: ["DEV", "TEST", "PROD"], 
+            description: "A variable, defined via drop-down list")
     }
 
     stages {
+        // Parameter: boolean
         stage("Demo step with parameter: boolean"){
             steps {
                 echo "So SERVICE_ENABLED parameter was set to: ${params.SERVICE_ENABLED}"
             }
         }
+
+        // Parameter: string
+        stage("Demo step with parameter: string"){
+            steps {
+                echo "So SINGLE_STRING_VAR parameter was set to: ${params.SINGLE_STRING_VAR}"
+            }
+        }
+
+        // Parameter: text
+        stage("Demo step with parameter: text"){
+            steps {
+                echo "So MULTI_STRING_VAR parameter was set to: ${params.MULTI_STRING_VAR}"
+            }
+        }
+
+        // Parameter: choice (drop-down list)
+        //    Default value: if nothing was specified during run, the 1st item from the area is chosen
+        stage("Demo step with parameter: choice (drop-down list)"){
+            steps {
+                echo "So VAR_FROM_DROP_DOWN_LIST parameter was set to: ${params.VAR_FROM_DROP_DOWN_LIST}"
+            }
+        }
+
 
     }
 }
