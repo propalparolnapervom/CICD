@@ -1,0 +1,18 @@
+// PARAMS: BOOLEAN
+
+pipeline {
+    agent any
+
+    parameters {
+        booleanParam(defaultValue: false, description: "Check the radiobutton, if you want to make it TRUE", name: "SERVICE_ENABLED")
+    }
+
+    stages {
+        stage("Demo step with parameter: boolean"){
+            steps {
+                echo "So SERVICE_ENABLED parameter was set to: ${params.SERVICE_ENABLED}"
+            }
+        }
+
+    }
+}
