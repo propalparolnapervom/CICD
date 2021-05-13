@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("Demo step with function"){
+            steps {
+                xbsFunction("Sergii")
+            }
+        }
+    }
+}
+
+def xbsFunction(String xbsName) {
+    echo "Hello, Mr. ${xbsName}"
+}
