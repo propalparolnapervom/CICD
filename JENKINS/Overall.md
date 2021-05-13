@@ -1,5 +1,10 @@
 # OVERALL INFO FOR JENKINS
 
+# OVERALL
+
+As Groovy is under the hood of the Jenkins: [Groovy Syntax](http://groovy-lang.org/syntax.html)
+
+
 # PIPELINES
 
 ## Docs
