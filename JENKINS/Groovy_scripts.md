@@ -1,16 +1,16 @@
 # Groovy Scripts examples
 
-So Jenkins has a window to run Groovy scripts (for example, https://jenkins.datasenate.io/computer/(master)/script)
+So Jenkins has a window to run Groovy scripts (somewhere here https://jenkins.datasenate.io/computer/(master)/script)
 
 
-# How to purge the Jenkins Build Queue
+## How to purge the Jenkins Build Queue
 ```
 def q = Jenkins.instance.queue
 q.items.findAll { true }.each { q.cancel(it.task) }
 ```
  
 
-# How to kill all the running jobs + any left in queue
+## How to kill all the running jobs + any left in queue
 ```
  Jenkins.instance.queue.items.findAll { !it.task.name.contains("Extenda") }.each { 
   println "Cancel ${it.task.name}"
