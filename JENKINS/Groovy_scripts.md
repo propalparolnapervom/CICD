@@ -5,6 +5,7 @@ So Jenkins has a window to run Groovy scripts (somewhere here https://jenkins.da
 `Dashboard` -> `Manage Jenkins` -> `Manage Nodes and Clouds` -> Click on node (probably, `master`) -> `Script Console`
 
 ## How to kill zombie job
+`JobFullPath` is the `Full project name` you can find on the web-page of the branch for your Job.
 
 ```
 def zombieJobFullPath = 'Full/Job/Path'
