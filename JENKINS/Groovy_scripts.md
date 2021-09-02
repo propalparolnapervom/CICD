@@ -2,6 +2,21 @@
 
 So Jenkins has a window to run Groovy scripts (somewhere here https://jenkins.datasenate.io/computer/(master)/script)
 
+`Dashboard` -> `Manage Jenkins` -> `Manage Nodes and Clouds` -> Click on node (probably, `master`) -> `Script Console`
+
+## How to kill zombie job
+
+```
+def zombieJobFullPath = 'Full/Job/Path'
+def zombieJobBuildId = 1
+Jenkins.instance.getItemByFullName(zombieJobFullPath)
+                .getBuildByNumber(zombieJobBuildId)
+                .finish(
+                        hudson.model.Result.ABORTED,
+                        new java.io.IOException("Aborting build")
+                )
+
+```
 
 ## How to purge the Jenkins Build Queue
 ```
